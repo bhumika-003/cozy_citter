@@ -3,6 +3,13 @@ import dogCustomer from "@/assets/dog-customer.png";
 import cozyStreetBg from "@/assets/cozy-street-bg.png";
 
 const HeroSection = () => {
+  const handleViewMenu = () => {
+    const menuSection = document.getElementById("menu");
+    if (menuSection) {
+      menuSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="relative min-h-screen overflow-hidden">
       {/* Background Image */}
@@ -73,7 +80,11 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mt-16">
-            <button className="btn-cozy text-cream text-lg hover:animate-wiggle">
+            <button
+              type="button"
+              onClick={handleViewMenu}
+              className="btn-cozy text-cream text-lg hover:animate-wiggle"
+            >
               🍣 View Menu
             </button>
             <button className="px-6 py-3 rounded-2xl font-quicksand font-semibold bg-cream/90 text-wood hover:bg-cream transition-all duration-300 shadow-cozy hover:-translate-y-1">
