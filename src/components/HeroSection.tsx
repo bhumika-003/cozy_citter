@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import catChef from "@/assets/cat-chef.png";
 import dogCustomer from "@/assets/dog-customer.png";
 import cozyStreetBg from "@/assets/cozy-street-bg.png";
@@ -13,7 +14,7 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen overflow-hidden">
       {/* Background Image */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${cozyStreetBg})` }}
       >
@@ -52,7 +53,11 @@ const HeroSection = () => {
           {/* Characters */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-8">
             {/* Cat Chef */}
-            <div className="relative group">
+            <Link
+              to="/chef-whiskers"
+              aria-label="Visit Chef Whiskers"
+              className="relative group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cream/80 focus-visible:ring-offset-4 focus-visible:ring-offset-night"
+            >
               <div className="absolute -inset-4 bg-lantern/30 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <img
                 src={catChef}
@@ -62,10 +67,14 @@ const HeroSection = () => {
               <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-cream/90 px-4 py-2 rounded-2xl shadow-cozy">
                 <p className="font-quicksand font-semibold text-wood text-sm">Chef Whiskers</p>
               </div>
-            </div>
+            </Link>
 
             {/* Dog Customer */}
-            <div className="relative group">
+            <Link
+              to="/mochi"
+              aria-label="Visit Mochi"
+              className="relative group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cream/80 focus-visible:ring-offset-4 focus-visible:ring-offset-night"
+            >
               <div className="absolute -inset-4 bg-coral/30 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <img
                 src={dogCustomer}
@@ -75,7 +84,7 @@ const HeroSection = () => {
               <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-cream/90 px-4 py-2 rounded-2xl shadow-cozy">
                 <p className="font-quicksand font-semibold text-wood text-sm">Mochi</p>
               </div>
-            </div>
+            </Link>
           </div>
 
           {/* CTA Buttons */}
