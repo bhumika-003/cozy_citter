@@ -20,7 +20,8 @@ const Index = () => {
       {/* Enable sound button */}
       <button
         onClick={startAudio}
-        className="fixed bottom-4 right-4 z-50 px-4 py-2 rounded-xl shadow"
+        className="fixed bottom-4 right-4 z-[9999] bg-white p-3 rounded-xl shadow"
+
       >
         🔊 Enable Sound
       </button>
