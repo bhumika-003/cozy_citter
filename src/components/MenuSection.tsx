@@ -36,7 +36,7 @@ const menuItems: MenuItem[] = [
 
 const MenuSection = () => {
   return (
-    <section className="relative py-20 bg-night-light">
+    <section id="menu" className="relative py-20 bg-night-light">
       {/* Decorative lantern glows */}
       <div className="absolute top-10 left-10 w-32 h-32 bg-lantern/20 blur-3xl rounded-full animate-glow" />
       <div className="absolute bottom-20 right-20 w-40 h-40 bg-coral/15 blur-3xl rounded-full animate-glow" style={{ animationDelay: "1.5s" }} />
