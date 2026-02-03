@@ -15,7 +15,7 @@ const Index = () => {
     <main className="min-h-screen">
 
       {/* Background audio */}
-      <audio ref={audioRef} loop src="/audio/bg.mp3" />
+      <audio ref={audioRef} loop src="/audio/cozy_critter_cafe.wav" />
 
       {/* Enable sound button */}
       <button
