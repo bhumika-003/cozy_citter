@@ -1,11 +1,30 @@
+import { useRef } from "react";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import MenuSection from "@/components/MenuSection";
 import CozyFooter from "@/components/CozyFooter";
 
 const Index = () => {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const startAudio = () => {
+    audioRef.current?.play();
+  };
+
   return (
     <main className="min-h-screen">
+
+      {/* Background audio */}
+      <audio ref={audioRef} loop src="/audio/bg.mp3" />
+
+      {/* Enable sound button */}
+      <button
+        onClick={startAudio}
+        className="fixed bottom-4 right-4 z-50 px-4 py-2 rounded-xl shadow"
+      >
+        🔊 Enable Sound
+      </button>
+
       <HeroSection />
       <AboutSection />
       <MenuSection />
