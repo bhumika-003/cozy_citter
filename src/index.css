@@ -1,96 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Cozy Sushi Restaurant Game Design System
+   Warm nighttime vibes with soft pastels and lantern glow */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Night sky and backgrounds */
+    --background: 230 35% 12%;
+    --foreground: 35 30% 90%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Warm cream cards */
+    --card: 35 40% 92%;
+    --card-foreground: 25 30% 20%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Popover matches cards */
+    --popover: 35 40% 92%;
+    --popover-foreground: 25 30% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Coral/peach primary */
+    --primary: 15 70% 65%;
+    --primary-foreground: 25 30% 15%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Warm beige secondary */
+    --secondary: 35 35% 85%;
+    --secondary-foreground: 25 30% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted sage tones */
+    --muted: 120 15% 75%;
+    --muted-foreground: 120 10% 35%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Amber accent for lanterns */
+    --accent: 38 90% 60%;
+    --accent-foreground: 25 30% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Soft pink destructive */
+    --destructive: 350 60% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Borders and inputs */
+    --border: 35 25% 80%;
+    --input: 35 25% 85%;
+    --ring: 15 70% 65%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Custom cozy colors */
+    --night-sky: 230 35% 12%;
+    --night-sky-light: 230 30% 18%;
+    --lantern-glow: 38 90% 60%;
+    --lantern-warm: 25 85% 55%;
+    --cream: 35 40% 92%;
+    --cream-dark: 35 35% 85%;
+    --coral: 15 70% 65%;
+    --coral-light: 15 65% 75%;
+    --sage: 120 20% 65%;
+    --sage-dark: 120 15% 45%;
+    --wood: 25 40% 35%;
+    --wood-light: 25 35% 50%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Gradients */
+    --gradient-night: linear-gradient(180deg, hsl(230 35% 8%) 0%, hsl(230 35% 18%) 100%);
+    --gradient-lantern: radial-gradient(circle, hsl(38 90% 60% / 0.4) 0%, transparent 70%);
+    --gradient-card: linear-gradient(145deg, hsl(35 40% 94%) 0%, hsl(35 35% 88%) 100%);
+    --gradient-button: linear-gradient(145deg, hsl(15 70% 68%) 0%, hsl(15 65% 58%) 100%);
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(230 35% 8% / 0.3);
+    --shadow-lantern: 0 0 30px hsl(38 90% 60% / 0.5);
+    --shadow-card: 0 8px 32px hsl(25 40% 20% / 0.15);
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar (keeping for compatibility) */
+    --sidebar-background: 230 35% 15%;
+    --sidebar-foreground: 35 30% 90%;
+    --sidebar-primary: 15 70% 65%;
+    --sidebar-primary-foreground: 25 30% 15%;
+    --sidebar-accent: 38 90% 60%;
+    --sidebar-accent-foreground: 25 30% 15%;
+    --sidebar-border: 230 25% 25%;
+    --sidebar-ring: 15 70% 65%;
   }
 }
 
@@ -100,6 +91,157 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-nunito antialiased;
+    background: var(--gradient-night);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  /* Cozy button styles */
+  .btn-cozy {
+    @apply px-6 py-3 rounded-2xl font-quicksand font-semibold transition-all duration-300;
+    background: var(--gradient-button);
+    box-shadow: 0 4px 15px hsl(15 70% 50% / 0.3);
+  }
+
+  .btn-cozy:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px hsl(15 70% 50% / 0.4);
+  }
+
+  /* Card with warm glow */
+  .card-cozy {
+    @apply rounded-3xl p-6;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Lantern glow effect */
+  .lantern-glow {
+    position: relative;
+  }
+
+  .lantern-glow::after {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    background: var(--gradient-lantern);
+    pointer-events: none;
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+
+  /* Steam animation */
+  .steam {
+    position: relative;
+  }
+
+  .steam::before,
+  .steam::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 20px;
+    background: hsl(0 0% 100% / 0.4);
+    border-radius: 50%;
+    filter: blur(4px);
+    animation: steam-rise 2s ease-out infinite;
+  }
+
+  .steam::after {
+    left: 15px;
+    animation-delay: 0.5s;
+  }
+}
+
+@layer utilities {
+  /* Floating animation */
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float 4s ease-in-out infinite 1s;
+  }
+
+  /* Glow pulse */
+  .animate-glow {
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+
+  /* Wiggle for cute interactions */
+  .animate-wiggle {
+    animation: wiggle 0.5s ease-in-out;
+  }
+
+  /* Steam rising */
+  .animate-steam {
+    animation: steam-rise 2.5s ease-out infinite;
+  }
+
+  /* Twinkle for stars */
+  .animate-twinkle {
+    animation: twinkle 2s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes steam-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scaleX(1);
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30px) scaleX(1.5);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
