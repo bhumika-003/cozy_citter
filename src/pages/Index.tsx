@@ -86,6 +86,19 @@ const Index = () => {
 
   return (
     <main className="min-h-screen">
+
+      {/* Background audio */}
+      <audio ref={audioRef} loop src="/audio/cozy_critter_cafe.wav" />
+
+      {/* Enable sound button */}
+      <button
+        onClick={startAudio}
+        className="fixed bottom-4 right-4 z-[9999] bg-white p-3 rounded-xl shadow"
+
+      >
+        🔊 Enable Sound
+      </button>
+
       <HeroSection />
       <AboutSection />
       <MenuSection />
