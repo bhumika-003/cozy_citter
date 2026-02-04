@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import catChef from "@/assets/cat-chef.png";
 import dogCustomer from "@/assets/dog-customer.png";
-import cozyStreetBg from "@/assets/cozy-street-bg.png";
 
 const HeroSection = () => {
   const handleViewMenu = () => {
@@ -13,10 +12,9 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen overflow-hidden">
-      {/* Background Image */}
+      {/* Theme Background (no image) */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${cozyStreetBg})` }}
+        className="absolute inset-0 bg-gradient-to-b from-orange-100 via-white to-orange-200"
       >
         <div className="absolute inset-0 bg-gradient-to-b from-night/40 via-transparent to-night/80" />
       </div>
