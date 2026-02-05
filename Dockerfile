@@ -23,11 +23,8 @@ RUN npm install --legacy-peer-deps
 # Build React app
 RUN npm run build
 
-# Copy main_new.py to root for easier import
-RUN cp testing/main_new.py ./main_new.py
-
 # Expose port
 EXPOSE 8000
 
-# Start FastAPI server
-CMD ["uvicorn", "main_new:app", "--host", "0.0.0.0", "--port", "8000"]
+# Start FastAPI server from testing directory
+CMD ["sh", "-c", "cd /app && uvicorn testing.main_new:app --host 0.0.0.0 --port 8000"]
