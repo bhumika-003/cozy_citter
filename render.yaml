@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: chatgpt-clone
+    runtime: docker
+    region: oregon
+    plan: free
+    autoDeploy: true
+    dockerfilePath: ./Dockerfile
+    
+    # Health check
+    healthCheckPath: /api/health
+    
+    # Environment variables
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: APP_API_KEY
+        value: sk-test-key-12345
